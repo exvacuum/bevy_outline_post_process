@@ -13,6 +13,11 @@ grex_outline_post_process::components::OutlinePostProcessSettings {
     threshold: 0.0,
 }
 ```
+## Compatibility
+
+| Crate Version | Bevy Version |
+|---            |---           |
+| 0.1           | 0.13         |
 
 ## Installation
 
