@@ -3,6 +3,8 @@
 
 A plugin for the [Bevy](https://bevyengine.org) engine which adds an outline post-processing effect.
 
+Note: This is a full-screen post process effect and cannot be enabled/disabled for specific objects.
+
 ## Screenshots
 ![](./doc/screenshot.png)
 ![](./doc/screenshot_smooth.png)
