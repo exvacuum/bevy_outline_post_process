@@ -42,6 +42,7 @@ fn main() {
             DefaultPlugins,
             grex_outline_post_process::OutlinePostProcessPlugin,
         ))
+        .insert(Msaa::Off)
         .run();
 }
 ```
@@ -50,6 +51,7 @@ When spawning a camera:
 ```rs
 commands.spawn((
     // Camera3dBundle...
+    NormalPrepass,
     grex_outline_post_process::components::OutlinePostProcessSettings {
         weight: 2.0,
         threshold: 0.0,
