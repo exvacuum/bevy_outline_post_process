@@ -29,25 +29,6 @@ grex_outline_post_process::components::OutlinePostProcessSettings {
 git = "https://github.com/exvacuum/grex_outline_post_process.git"
 ```
 
-### Workspace Submodule
-I recommend organizing your Bevy project as a [cargo workspace](https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html) and pulling this repository as a git submodule:
-```bash
-git submodule add git@github.com:exvacuum/grex_outline_post_process.git
-```
-
-We can add a [patch override](https://doc.rust-lang.org/cargo/reference/overriding-dependencies.html#overriding-repository-url) for this repository in the workspace's `Cargo.toml`:
-```toml
-[patch."https://github.com/exvacuum/grex_outline_post_process.git".grex_outline_post_process]
-path = "./grex_outline_post_process"
-```
-
-And then, from a crate that depends on it:
-```toml
-[dependencies.grex_outline_post_process]
-git = "https://github.com/exvacuum/grex_outline_post_process.git"
-```
-
-
 ## Usage
 
 In `main.rs`:
