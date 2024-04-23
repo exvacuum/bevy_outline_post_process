@@ -42,7 +42,7 @@ fn main() {
             DefaultPlugins,
             grex_outline_post_process::OutlinePostProcessPlugin,
         ))
-        .insert(Msaa::Off)
+        .insert_resource(Msaa::Off)
         .run();
 }
 ```
