@@ -1,5 +1,7 @@
 use bevy::{prelude::*, render::{RenderApp, extract_component::{UniformComponentPlugin, ExtractComponentPlugin}, render_graph::{RenderGraphApp, ViewNodeRunner}}, asset::embedded_asset, core_pipeline::core_3d::graph::{Core3d, Node3d}};
 
+pub use nodes::OutlineRenderLabel;
+
 pub struct OutlinePostProcessPlugin;
 
 pub mod components;
