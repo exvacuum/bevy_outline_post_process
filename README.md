@@ -1,4 +1,4 @@
-# grex_outline_post_process
+# bevy_outline_post_process
 
 
 A plugin for the [Bevy](https://bevyengine.org) engine which adds an outline post-processing effect.
