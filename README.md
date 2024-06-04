@@ -1,4 +1,4 @@
-# grex_outline_post_process
+# bevy_outline_post_process
 
 
 A plugin for the [Bevy](https://bevyengine.org) engine which adds an outline post-processing effect.
@@ -25,8 +25,8 @@ grex_outline_post_process::components::OutlinePostProcessSettings {
 
 ### Using git URL in Cargo.toml
 ```toml
-[dependencies.grex_outline_post_process]
-git = "https://github.com/exvacuum/grex_outline_post_process.git"
+[dependencies.bevy_outline_post_process]
+git = "https://github.com/exvacuum/bevy_outline_post_process.git"
 ```
 
 ## Usage
@@ -34,13 +34,13 @@ git = "https://github.com/exvacuum/grex_outline_post_process.git"
 In `main.rs`:
 ```rs
 use bevy::prelude::*;
-use grex_outline_post_process;
+use bevy_outline_post_process;
 
 fn main() {
     App::new()
         .add_plugins((
             DefaultPlugins,
-            grex_outline_post_process::OutlinePostProcessPlugin,
+            bevy_outline_post_process::OutlinePostProcessPlugin,
         ))
         .insert_resource(Msaa::Off)
         .run();
@@ -52,7 +52,7 @@ When spawning a camera:
 commands.spawn((
     // Camera3dBundle...
     NormalPrepass,
-    grex_outline_post_process::components::OutlinePostProcessSettings {
+    bevy_outline_post_process::components::OutlinePostProcessSettings {
         weight: 2.0,
         threshold: 0.0,
     }

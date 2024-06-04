@@ -1,4 +1,18 @@
-use bevy::{prelude::*, render::{render_graph::{ViewNode, NodeRunError, RenderGraphContext, RenderLabel}, view::ViewTarget, renderer::RenderContext, render_resource::{PipelineCache, BindGroupEntries, RenderPassDescriptor, RenderPassColorAttachment, Operations}, extract_component::ComponentUniforms}, core_pipeline::prepass::ViewPrepassTextures, ecs::query::QueryItem};
+use bevy::{
+    core_pipeline::prepass::ViewPrepassTextures,
+    ecs::query::QueryItem,
+    prelude::*,
+    render::{
+        extract_component::ComponentUniforms,
+        render_graph::{NodeRunError, RenderGraphContext, RenderLabel, ViewNode},
+        render_resource::{
+            BindGroupEntries, Operations, PipelineCache, RenderPassColorAttachment,
+            RenderPassDescriptor,
+        },
+        renderer::RenderContext,
+        view::ViewTarget,
+    },
+};
 
 use super::components;
 use super::resources;
@@ -30,7 +44,8 @@ impl ViewNode for OutlineRenderNode {
             return Ok(());
         };
 
-        let uniforms = world.resource::<ComponentUniforms<components::OutlinePostProcessSettings>>();
+        let uniforms =
+            world.resource::<ComponentUniforms<components::OutlinePostProcessSettings>>();
         let Some(uniform_binding) = uniforms.uniforms().binding() else {
             error!("Failed to get settings uniform binding");
             return Ok(());
