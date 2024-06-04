@@ -1,5 +1,9 @@
 #![warn(missing_docs)]
 
+//! A plugin for the Bevy game engine which provides an outline post-process effect. The effect
+//! makes use of a normal prepass to generate outlines where differences in the normal buffer
+//! occur.
+
 use bevy::{
     asset::embedded_asset,
     core_pipeline::core_3d::graph::{Core3d, Node3d},
@@ -13,11 +17,13 @@ use bevy::{
 
 pub use nodes::OutlineRenderLabel;
 
-pub struct OutlinePostProcessPlugin;
-
+/// Components used by this plugin.
 pub mod components;
 mod nodes;
 mod resources;
+
+/// Plugin which provides an outline post-processing effect.
+pub struct OutlinePostProcessPlugin;
 
 impl Plugin for OutlinePostProcessPlugin {
     fn build(&self, app: &mut App) {

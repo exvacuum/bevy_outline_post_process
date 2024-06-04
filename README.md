@@ -10,7 +10,7 @@ Note: This is a full-screen post process effect and cannot be enabled/disabled f
 ![](./doc/screenshot_smooth.png)
 Configuration Used:
 ```rs
-grex_outline_post_process::components::OutlinePostProcessSettings {
+bevy_outline_post_process::components::OutlinePostProcessSettings {
     weight: 2.0,
     threshold: 0.0,
 }
