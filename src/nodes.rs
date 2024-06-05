@@ -17,6 +17,7 @@ use bevy::{
 use super::components;
 use super::resources;
 
+/// Label for outline post-process render node.
 #[derive(RenderLabel, Clone, Eq, PartialEq, Hash, Debug)]
 pub struct OutlineRenderLabel;
 
