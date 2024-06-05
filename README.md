@@ -1,5 +1,9 @@
 # bevy_outline_post_process
 
+![License](https://img.shields.io/badge/license-MIT%2FApache-blue.svg)
+![Tag](https://img.shields.io/github/v/tag/exvacuum/bevy_outline_post_process)
+![Build](https://img.shields.io/github/actions/workflow/status/exvacuum/bevy_outline_post_process/rust.yml)
+[![Docs](https://img.shields.io/website?url=https%3A%2F%2Fexvacuum.github.io%2Fbevy_outline_post_process%2F&label=docs)](https://exvacuum.github.io/bevy_outline_post_process)
 
 A plugin for the [Bevy](https://bevyengine.org) engine which adds an outline post-processing effect.
 
