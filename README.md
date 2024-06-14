@@ -5,7 +5,7 @@
 ![Build](https://img.shields.io/github/actions/workflow/status/exvacuum/bevy_outline_post_process/rust.yml)
 [![Docs](https://img.shields.io/website?url=https%3A%2F%2Fexvacuum.github.io%2Fbevy_outline_post_process%2F&label=docs)](https://exvacuum.github.io/bevy_outline_post_process)
 
-A plugin for the [Bevy](https://bevyengine.org) engine which adds an outline post-processing effect.
+A plugin for the [Bevy](https://bevyengine.org) engine which adds an outline post-processing effect. Optionally supports adaptive outlining, so darker areas are outlined in white rather than black, based on luminance.
 
 Note: This is a full-screen post process effect and cannot be enabled/disabled for specific objects.
 
@@ -14,16 +14,13 @@ Note: This is a full-screen post process effect and cannot be enabled/disabled f
 ![](./doc/screenshot_smooth.png)
 Configuration Used:
 ```rs
-bevy_outline_post_process::components::OutlinePostProcessSettings {
-    weight: 2.0,
-    threshold: 0.0,
-}
+bevy_outline_post_process::components::OutlinePostProcessSettings::new(2.0, 0.0, false);
 ```
 ## Compatibility
 
 | Crate Version | Bevy Version |
 |---            |---           |
-| 0.1           | 0.13         |
+| 0.2           | 0.13         |
 
 ## Installation
 
@@ -56,10 +53,7 @@ When spawning a camera:
 commands.spawn((
     // Camera3dBundle...
     NormalPrepass,
-    bevy_outline_post_process::components::OutlinePostProcessSettings {
-        weight: 2.0,
-        threshold: 0.0,
-    }
+    bevy_outline_post_process::components::OutlinePostProcessSettings::new(2.0, 0.0, false);
 ));
 ```
 

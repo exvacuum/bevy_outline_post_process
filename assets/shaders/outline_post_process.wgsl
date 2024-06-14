@@ -3,9 +3,7 @@
 struct OutlinePostProcessSettings {
 	weight: f32,
 	threshold: f32,
-#ifdef SIXTEEN_BYTE_ALIGNMENT
-	_padding: vec2<f32>,
-#endif
+    adaptive: u32,
 }
 
 @group(0) @binding(0) var screen_texture: texture_2d<f32>;
@@ -39,7 +37,11 @@ fn fragment(
 
     let delta_clipped = clamp((delta_raw * 2.0) - settings.threshold, 0.0, 1.0);
 
-    let outline = vec4f(delta_clipped, delta_clipped, delta_clipped, 0.0);
+    var outline = vec4f(delta_clipped, delta_clipped, delta_clipped, 0.0);
+    let luma = (0.2126 * screen_color.r + 0.7152 * screen_color.g + 0.0722 * screen_color.b);
+    if settings.adaptive != 0 && luma < 0.5 {
+        outline = outline * -1;
+    }
 
     return screen_color - outline;
 }
