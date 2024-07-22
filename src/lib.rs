@@ -34,7 +34,7 @@ impl Plugin for OutlinePostProcessPlugin {
             ExtractComponentPlugin::<components::OutlinePostProcessSettings>::default(),
         ));
 
-        let Ok(render_app) = app.get_sub_app_mut(RenderApp) else {
+        let Some(render_app) = app.get_sub_app_mut(RenderApp) else {
             return;
         };
 
@@ -54,7 +54,7 @@ impl Plugin for OutlinePostProcessPlugin {
     }
 
     fn finish(&self, app: &mut App) {
-        let Ok(render_app) = app.get_sub_app_mut(RenderApp) else {
+        let Some(render_app) = app.get_sub_app_mut(RenderApp) else {
             return;
         };
 

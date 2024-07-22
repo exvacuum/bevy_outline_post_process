@@ -1,6 +1,7 @@
 # bevy_outline_post_process
 
-![License](https://img.shields.io/badge/license-MIT%2FApache-blue.svg)
+![Crates](https://img.shields.io/crates/v/bevy_outline_post_process)
+![License](https://img.shields.io/badge/license-0BSD%2FMIT%2FApache-blue.svg)
 ![Tag](https://img.shields.io/github/v/tag/exvacuum/bevy_outline_post_process)
 ![Build](https://img.shields.io/github/actions/workflow/status/exvacuum/bevy_outline_post_process/rust.yml)
 [![Docs](https://img.shields.io/website?url=https%3A%2F%2Fexvacuum.github.io%2Fbevy_outline_post_process%2F&label=docs)](https://exvacuum.github.io/bevy_outline_post_process)
@@ -20,9 +21,16 @@ bevy_outline_post_process::components::OutlinePostProcessSettings::new(2.0, 0.0,
 
 | Crate Version | Bevy Version |
 |---            |---           |
-| 0.2           | 0.13         |
+| 0.3           | 0.14         |
+| 0.1-0.2       | 0.13         |
 
 ## Installation
+
+### crates.io
+```toml
+[dependencies]
+bevy_outline_post_process = "0.3"
+```
 
 ### Using git URL in Cargo.toml
 ```toml
@@ -58,4 +66,8 @@ commands.spawn((
 ```
 
 This effect will only run for cameras which contain this component.
+
+## License
+
+This crate is licensed under your choice of 0BSD, Apache-2.0, or MIT license.
 
