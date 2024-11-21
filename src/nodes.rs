@@ -57,6 +57,11 @@ impl ViewNode for OutlineRenderNode {
             return Ok(());
         };
 
+        let Some(deferred_buffer_view) = view_prepass_textures.deferred_view() else {
+            error!("Failed to get deferred buffer view");
+            return Ok(());
+        };
+
         let post_process = view_target.post_process_write();
 
         let bind_group = render_context.render_device().create_bind_group(
@@ -67,6 +72,7 @@ impl ViewNode for OutlineRenderNode {
                 &render_pipeline.screen_sampler,
                 normal_buffer_view,
                 &render_pipeline.normal_sampler,
+                deferred_buffer_view,
                 uniform_binding,
             )),
         );

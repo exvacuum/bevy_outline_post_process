@@ -37,6 +37,7 @@ impl FromWorld for OutlinePostProcessPipeline {
                     sampler(SamplerBindingType::Filtering),
                     texture_2d(TextureSampleType::Float { filterable: true }),
                     sampler(SamplerBindingType::Filtering),
+                    texture_2d(TextureSampleType::Uint),
                     uniform_buffer::<components::OutlinePostProcessSettings>(false),
                 ),
             ),
