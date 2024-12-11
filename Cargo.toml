@@ -1,11 +1,12 @@
 [package]
 name = "bevy_outline_post_process"
-version = "0.3.1"
+version = "0.4.0"
 edition = "2021"
 description = "An adaptive outline post-processing effect for the Bevy game engine."
 license = "0BSD OR MIT OR Apache-2.0"
+repository = "https://git.exvacuum.dev/bevy_outline_post_process"
 
 [dependencies.bevy]
-version = "0.14"
+version = "0.15"
 default-features = false
-features = ["bevy_render", "bevy_asset", "bevy_core_pipeline"]
+features = ["bevy_render", "bevy_asset", "bevy_core_pipeline", "png"]

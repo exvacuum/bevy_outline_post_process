@@ -10,7 +10,6 @@ use bevy::{
             TextureFormat, TextureSampleType,
         },
         renderer::RenderDevice,
-        texture::BevyDefault,
     },
 };
 
@@ -71,6 +70,7 @@ impl FromWorld for OutlinePostProcessPipeline {
                             write_mask: ColorWrites::ALL,
                         })],
                     }),
+                    zero_initialize_workgroup_memory: false,
                 });
 
         Self {

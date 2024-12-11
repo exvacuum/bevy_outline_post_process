@@ -1,11 +1,13 @@
 use bevy::{
     prelude::*,
     render::{extract_component::ExtractComponent, render_resource::ShaderType},
+    core_pipeline::prepass::{NormalPrepass, DepthPrepass, DeferredPrepass},
 };
 
 /// Component which, when inserted into an entity with a camera and normal prepass, enables an outline effect for that
 /// camera.
 #[derive(Component, ShaderType, ExtractComponent, PartialEq, Clone)]
+#[require(NormalPrepass, DepthPrepass, DeferredPrepass, Msaa(|| Msaa::Off))]
 pub struct OutlinePostProcessSettings {
     /// Weight of outlines in pixels.
     weight: f32,

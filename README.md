@@ -3,7 +3,6 @@
 [![Crates](https://img.shields.io/crates/v/bevy_outline_post_process)](https://crates.io/crates/bevy_outline_post_process)
 ![License](https://img.shields.io/badge/license-0BSD%2FMIT%2FApache-blue.svg)
 ![Tag](https://img.shields.io/github/v/tag/exvacuum/bevy_outline_post_process)
-![Build](https://img.shields.io/github/actions/workflow/status/exvacuum/bevy_outline_post_process/rust.yml)
 [![Docs](https://img.shields.io/docsrs/bevy_outline_post_process)](https://exvacuum.github.io/bevy_outline_post_process)
 
 A plugin for the [Bevy](https://bevyengine.org) engine which adds an outline post-processing effect. Optionally supports adaptive outlining, so darker areas are outlined in white rather than black, based on luminance.
@@ -11,16 +10,17 @@ A plugin for the [Bevy](https://bevyengine.org) engine which adds an outline pos
 Note: This is a full-screen post process effect and cannot be enabled/disabled for specific objects.
 
 ## Screenshots
-![](./doc/screenshot.png)
-![](./doc/screenshot_smooth.png)
+![](https://git.exvacuum.dev/plain/doc/screenshot.png)
+![](https://git.exvacuum.dev/plain/doc/screenshot_smooth.png)
 Configuration Used:
 ```rs
-bevy_outline_post_process::components::OutlinePostProcessSettings::new(2.0, 0.0, false);
+bevy_outline_post_process::components::OutlinePostProcessSettings::new(2.0, 0.0, false, 0.0);
 ```
 ## Compatibility
 
 | Crate Version | Bevy Version |
 |---            |---           |
+| 0.4           | 0.15         |
 | 0.3           | 0.14         |
 | 0.1-0.2       | 0.13         |
 
@@ -29,13 +29,13 @@ bevy_outline_post_process::components::OutlinePostProcessSettings::new(2.0, 0.0,
 ### crates.io
 ```toml
 [dependencies]
-bevy_outline_post_process = "0.3"
+bevy_outline_post_process = "0.4"
 ```
 
 ### Using git URL in Cargo.toml
 ```toml
 [dependencies.bevy_outline_post_process]
-git = "https://github.com/exvacuum/bevy_outline_post_process.git"
+git = "https://git.exvacuum.dev/bevy_outline_post_process"
 ```
 
 ## Usage
@@ -51,7 +51,6 @@ fn main() {
             DefaultPlugins,
             bevy_outline_post_process::OutlinePostProcessPlugin,
         ))
-        .insert_resource(Msaa::Off)
         .run();
 }
 ```
@@ -59,9 +58,8 @@ fn main() {
 When spawning a camera:
 ```rs
 commands.spawn((
-    // Camera3dBundle...
-    NormalPrepass,
-    bevy_outline_post_process::components::OutlinePostProcessSettings::new(2.0, 0.0, false);
+    // Camera3d...
+    bevy_outline_post_process::components::OutlinePostProcessSettings::new(2.0, 0.0, false, 0.0);
 ));
 ```
 
