@@ -10,8 +10,8 @@ A plugin for the [Bevy](https://bevyengine.org) engine which adds an outline pos
 Note: This is a full-screen post process effect and cannot be enabled/disabled for specific objects.
 
 ## Screenshots
-![](https://git.exvacuum.dev/plain/doc/screenshot.png)
-![](https://git.exvacuum.dev/plain/doc/screenshot_smooth.png)
+![](https://git.exvacuum.dev/bevy_outline_post_process/plain/doc/screenshot.png)
+![](https://git.exvacuum.dev/bevy_outline_post_process/plain/doc/screenshot_smooth.png)
 Configuration Used:
 ```rs
 bevy_outline_post_process::components::OutlinePostProcessSettings::new(2.0, 0.0, false, 0.0);
